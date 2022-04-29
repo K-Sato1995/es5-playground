@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ES CHECKER</title>
+
+    <script src="https://unpkg.com/codeflask/build/codeflask.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Hello</h1>
+    <button>Eslint</button>
+
+    <div id="editor"></div>
+    <style>
+      .codeflask {
+        border: solid 1px;
+        width: 300px;
+        height: 300px;
+        border-radius: 3px;
+      }
+    </style>
+
+    <script type="module">
+      import linterModule from "../node_modules/eslint/lib/linter/linter";
+
+      let code = `var msg = "Hello World"\nconsole.log(test)`;
+      const flask = new CodeFlask("#editor", {
+        language: "js",
+        lineNumbers: true,
+      });
+
+      flask.updateCode(code);
+
+      flask.onUpdate((code) => {
+        console.log(code);
+      });
+
+      const linter = new linterModule.Linter();
+      const rules = linter.getRules();
+
+      const lint = () => {
+        try {
+          const { messages, output } = linter.verifyAndFix(
+            this.state.text,
+            this.state.options,
+            { fix: this.state.fix }
+          );
+          let fatalMessage;
+
+          if (messages && messages.length > 0 && messages[0].fatal) {
+            fatalMessage = messages[0];
+          }
+          return {
+            messages,
+            output,
+            fatalMessage,
+          };
+        } catch (error) {
+          return {
+            messages: [],
+            output: this.state.text,
+            error,
+          };
+        }
+      };
+    </script>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
