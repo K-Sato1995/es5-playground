@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/http-server src",
-    "web": "webpack serve",
+    "dev": "webpack serve",
     "format": "./node_modules/.bin/prettier --write src",
     "build": "webpack --config webpack.config.js"
   },
@@ -16,12 +15,17 @@
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.5",
-    "eslint": "^8.14.0",
     "html-webpack-plugin": "^5.5.0",
-    "http-server": "^14.1.0",
     "prettier": "^2.6.2",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"
+  },
+  "dependencies": {
+    "@eslint/eslintrc": "^0.4.2",
+    "codeflask": "^1.4.1",
+    "eslint4b": "^7.27.0",
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "path-browserify": "^1.0.1"
   }
 }
