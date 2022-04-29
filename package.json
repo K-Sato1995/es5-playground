@@ -1,0 +1,15 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/http-server src"
+  },
+  "author": "K-Sato",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.0"
+  }
+}
