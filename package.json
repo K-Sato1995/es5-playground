@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/http-server src"
+    "dev": "./node_modules/.bin/http-server src",
+    "format": "./node_modules/.bin/prettier --write src"
   },
   "author": "K-Sato",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^14.1.0"
+    "http-server": "^14.1.0",
+    "prettier": "^2.6.2"
   }
 }
