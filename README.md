@@ -1,0 +1,1 @@
+## ES5(ECMAScript5)までしか使えなくてつらいJavaScript Playground
